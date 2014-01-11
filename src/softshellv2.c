@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 #include <signal.h>
 
 int prompt_and_parse(char **args) {
@@ -18,7 +19,7 @@ int prompt_and_parse(char **args) {
 	return 1;
 }
 
-main() {
+int main(int argc, char** argv) {
 	signal(SIGINT, SIG_IGN);
 	char* args[20];
 	while(prompt_and_parse(args)>0) {
